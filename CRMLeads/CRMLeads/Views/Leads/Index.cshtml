@@ -1,0 +1,80 @@
+﻿@model IEnumerable<LeadsEntity>
+@{
+    ViewData["Title"] = "Index";
+}
+<br/>
+
+
+<h2>Leads</h2>
+<hr/>
+<br/>
+
+<table class =" table table-striped" >
+    <tr>
+
+        @* <th> *@
+        @*     @Html.DisplayNameFor(model => model.Id) *@
+        @* </th> *@
+        <th>
+            @Html.DisplayNameFor(model => model.LeadDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadSource)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NextFollowUpDate)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var Item in Model)
+    {
+        @Html.HiddenFor(model => Item.Id)
+        <tr>
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => Item.Id) *@
+            @* </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => Item.LeadDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Item.LeadSource)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Item.LeadStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Item.NextFollowUpDate)
+            </td>
+            <td>
+                <a asp-action="EditLead" asp-route-Id="@Item.Id"><i class = "bi bi-pen">Edit</i></a>
+                <a asp-action="DeleteLead" asp-route-Id="@Item.Id"><i class="bi bi-trash-fill">Delete</i></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<br/>
+<p>
+    <a asp-action="AddLead" asp-controller="Leads" class ="btn btn-primary ">Add New lead</a>
+</p>

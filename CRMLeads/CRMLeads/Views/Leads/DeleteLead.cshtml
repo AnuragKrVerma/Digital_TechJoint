@@ -1,0 +1,68 @@
+﻿@model CRMLeads.Models.LeadsEntity
+
+@{
+    ViewData["Title"] = "DeleteLead";
+}
+
+
+<div class="container">
+    <div class="col-md-10 border-1">
+        <form asp-action="DeleteLead">
+            <input asp-for="Id" hidden />
+            <h2>Delete Leads</h2> <hr />
+            
+
+            <div class="row ">
+                <div class="col-6">
+                    <label asp-for="LeadDate" class="control-label"></label>
+                    <input asp-for="LeadDate" disabled class="form-control" />
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" disabled="disabled" class="form-control" />
+     
+                </div>
+
+                <div class="col-6">
+                    <label asp-for="EmailAddress" class="control-label"></label>
+                    <input asp-for="EmailAddress" disabled="disabled" class="form-control" />
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 ">
+                    <label asp-for="Mobile" class="control-label"></label>
+                    <input asp-for="Mobile" disabled="disabled" class="form-control" />
+
+                    
+                </div>
+
+                <div class="col-6">
+                    <label asp-for="LeadSource" class="control-label"></label>
+                    <input asp-for="LeadSource" disabled="disabled" class="form-control" />
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 ">
+                    <label asp-for="LeadStatus" class="control-label"></label>
+                    <input asp-for="LeadStatus" disabled="disabled" class="form-control" />
+                    
+                </div>
+
+                <div class="col-6">
+                    <label asp-for="NextFollowUpDate" class="control-label"></label>
+                    <input asp-for="NextFollowUpDate" disabled="disabled" class="form-control" />
+                    
+                </div>
+            </div>
+            <div class="my-2">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-warning">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
