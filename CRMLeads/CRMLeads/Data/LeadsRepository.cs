@@ -12,7 +12,7 @@ namespace CRMLeads.Data
 
         public LeadsRepository(IConfiguration configuration)
         {
-            string connStr = configuration.GetConnectionString("DefaultConnection");
+            string? connStr = configuration.GetConnectionString("DefaultConnection");
             _connection = new SqlConnection(connStr);
 
         }

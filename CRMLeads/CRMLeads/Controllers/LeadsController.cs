@@ -1,6 +1,7 @@
 ﻿using CRMLeads.Data;
 using CRMLeads.Models;
 using Microsoft.AspNetCore.Mvc;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace CRMLeads.Controllers
@@ -97,7 +98,7 @@ namespace CRMLeads.Controllers
         public IActionResult DeleteLeadById(int Id)
         {
           
-            Exception error = null;
+            
             try
             {
                     if (_leadsRepository.DeleteLead(Id))
@@ -110,11 +111,11 @@ namespace CRMLeads.Controllers
             }
             catch (Exception e)
             {
-                error = e;
+                _logger.LogError(e, "Error while deleting lead");
                 return View();
             }
 
-            _logger.LogError(error.Message, "Error while deleting lead");
+            
             return View();
         }
 
